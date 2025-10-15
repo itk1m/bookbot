@@ -3,12 +3,11 @@ from stats import get_num_words, get_uniq_char, get_sort_dict
 
 
 def main():
-    if len(sys.argv) != 2:
+    if len(sys.argv) < 2:
         print("Usage: python3 main.py <path_to_book>")
         sys.exit(1)
-    else:
-        book_path = sys.argv[1]
-
+    book_path = sys.argv[1]
+    # get the texts from the books directory
     text = get_book_text(book_path)
     num_words = get_num_words(text)
     uniq_dict = get_uniq_char(text)
